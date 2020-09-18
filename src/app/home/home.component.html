@@ -1,0 +1,16 @@
+<div class="home-container">
+    <div style="font-size: 2rem;">Home</div>
+    
+    <div>
+        <input [(ngModel)]="platform" type="text" placeholder="platform">
+        <input [(ngModel)]="id" type="text" placeholder="id">
+    </div>
+
+    <div>
+        <button (click)="getAccountStats()">Get Stats</button>
+    </div>
+    
+    <div>
+        <div *ngFor="let stat of accountStats">{{stat}}</div>
+    </div>
+</div>
