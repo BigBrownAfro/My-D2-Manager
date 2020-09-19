@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AccountStats } from './models/AccountStats';
+import { BungieResponse } from './models/BungieResponse';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +28,43 @@ export class DestinyService {
   }
 
   getAccountStats(platform:string, membershipId:string){
+    const platformId = this.getPlatformCode(platform);
+
+    return this.http.get<BungieResponse>(
+      this.destiny_platform_url + `${platformId}/Account/${membershipId}/Stats/`,
+      {
+        headers: new HttpHeaders({
+          'X-API-key': this.api_key
+        }),
+        responseType: 'json',
+        observe: 'body'
+      });
+  }
+
+  getUserSearch(platform:string, searchValue:string){
+    const platformId = this.getPlatformCode(platform);
+
+    return this.http.get<BungieResponse>(
+      this.bungie_platform_url + `User/SearchUsers`,
+      {
+        headers: new HttpHeaders({
+          'X-API-key': this.api_key
+        }),
+        responseType: 'json',
+        observe: 'body',
+        params:{
+          q: searchValue
+        }
+      });
+  }
+
+  private getPlatformCode(platform):number{
+    //If the platform passed is already in id form
+    if(Number.isInteger(platform)){
+      return platform;
+    }
+
+    //Map the platform name to the correct bungie code
     var platformId = 0;
     switch (platform.toLowerCase()) {
       case "xbox":
@@ -49,31 +87,6 @@ export class DestinyService {
         platformId = 3;
         break;
     }
-    
-    //var stats = "";
-
-    return this.http.get<AccountStats>(
-      this.destiny_platform_url + `${platformId}/Account/${membershipId}/Stats/`,
-      {
-        headers: new HttpHeaders({
-          'X-API-key': this.api_key
-        }),
-        responseType: 'json',
-        observe: 'body'
-      });/*
-    .toPromise()
-    .then((res:{Response}) => {
-      console.log(res);
-      stats = res.Response;
-      //JSON.stringify(res.Response);
-      //console.log(stats);
-      //console.log("No error. Returning stats");
-    })
-    .catch(err => {
-      console.log("Error caught:")
-      console.log(err);
-    });
-
-    return stats;*/
+    return platformId;
   }
 }
