@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PlayerSearchComponent } from './player-search/player-search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    PlayerSearchComponent
   ],
   imports: [
     BrowserModule,

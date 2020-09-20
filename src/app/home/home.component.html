@@ -1,11 +1,5 @@
-<div class="home-container">
-    <div class="account-lookup">
-        <div style="font-size: 2rem;">Account Search</div>
-        <input [(ngModel)]="accountSearchName" type="text" placeholder="Username">
-        <button (click)="searchForAccount()">Search</button>
-        <div *ngFor="let account of accounts">{{account}}</div>
-    </div>
-
+<app-player-search></app-player-search>
+<div style="margin-top: 4rem;" class="home-container">
     <div style="font-size: 2rem;">Home</div>
     
     <div>

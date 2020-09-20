@@ -1,0 +1,22 @@
+<div class="player-search-container">
+
+    <!-- Platform Dropdown Selection -->
+    <div class="platform-dropdown-container">
+
+        <div class="platform-dropdown-button">{{platform}}</div>
+
+        <div class="platform-dropdown-content" id="platform-dropdown-content">
+            <div class="platform-dropdown-item" *ngFor="let platform of allPlatforms" (click)="selectPlatform(platform)">
+                {{platform}}
+            </div>
+        </div>
+    </div>
+
+    <!-- Player Search Bar -->
+    <input class="search-bar" [(ngModel)]="accountSearchName" type="text" placeholder="Username">
+
+    <!-- Search Button -->
+    <div class="search-button" (click)="searchForAccount()">Search</div>
+</div>
+
+<div *ngFor="let account of accounts">{{account}}</div>
