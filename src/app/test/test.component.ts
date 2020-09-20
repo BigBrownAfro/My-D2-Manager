@@ -42,7 +42,7 @@ export class TestComponent implements OnInit {
 
           this.accounts.push(account.displayName + ", id:" + account.membershipId)
         }
-      })
+      });
     console.log(`would be searching for accounts on ${this.accountPlatform} with username ${this.accountSearchName}`);
     
   }
@@ -61,7 +61,7 @@ export class TestComponent implements OnInit {
           this.accountStats.push(`Character ${i + 1} (aka: ${character.characterId}) has ${character.merged.allTime.kills.basic.displayValue} kills`);
           //this.accountStats += "\n>";
         }
-      })
+      });
   }
 }
 

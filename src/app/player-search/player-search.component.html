@@ -16,7 +16,7 @@
     <input class="search-bar" [(ngModel)]="accountSearchName" type="text" placeholder="Username">
 
     <!-- Search Button -->
-    <div class="search-button" (click)="searchForAccount()">Search</div>
+    <div class="search-button" (click)="searchForPlayer()">Search</div>
 </div>
 
-<div *ngFor="let account of accounts">{{account}}</div>
+<div *ngFor="let user of users">{{user}}</div>

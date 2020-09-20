@@ -68,7 +68,10 @@ export class DestinyService {
           'X-API-key': this.api_key
         }),
         responseType: 'json',
-        observe: 'body'
+        observe: 'body',
+        params:{
+          returnOriginalProfile: "false"
+        }
       });
   }
 
@@ -86,6 +89,10 @@ export class DestinyService {
         break;
 
       case "psn":
+        platformId = 2;
+        break;
+
+      case "playstation":
         platformId = 2;
         break;
 
