@@ -58,6 +58,20 @@ export class DestinyService {
       });
   }
 
+  getPlayerSearch(platform:string, searchValue:string){
+    const platformId = this.getPlatformCode(platform);
+
+    return this.http.get<BungieResponse>(
+      this.destiny_platform_url + `SearchDestinyPlayer/${platformId}/${searchValue}`,
+      {
+        headers: new HttpHeaders({
+          'X-API-key': this.api_key
+        }),
+        responseType: 'json',
+        observe: 'body'
+      });
+  }
+
   private getPlatformCode(platform):number{
     //If the platform passed is already in id form
     if(Number.isInteger(platform)){

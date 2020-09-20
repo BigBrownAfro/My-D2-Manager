@@ -1,0 +1,35 @@
+<div class="home-container">
+    <div class="account-lookup">
+        <div style="font-size: 2rem;">Player Search</div>
+        <input [(ngModel)]="accountPlatform" type="text" placeholder="platform">
+        <input [(ngModel)]="accountSearchName" type="text" placeholder="Username">
+        <button (click)="searchForPlayer()">Search</button>
+        <div *ngFor="let account of accounts">{{account}}</div>
+    </div>
+
+    <div style="font-size: 2rem;">Home</div>
+    
+    <div>
+        <input [(ngModel)]="platform" type="text" placeholder="platform">
+        <input [(ngModel)]="id" type="text" placeholder="id">
+    </div>
+
+    <div>
+        <button (click)="getAccountStats()">Get Stats</button>
+    </div>
+    
+    <div>
+        <div *ngFor="let stat of accountStats">{{stat}}</div>
+    </div>
+
+    <div class="dropdown">
+        <input class="dropbtn" type="text" value="Button.....">
+        <div class="dropdown-content">
+          <div class="dropdown-item">Option 1</div>
+          <div class="dropdown-item">Option 222222222222222222222</div>
+          <div class="dropdown-item">Option 3</div>
+        </div>
+    </div>
+
+    <div>To Be Covored</div>
+</div>
