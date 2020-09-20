@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PlayerSearchComponent } from './player-search/player-search.component';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PlayerSearchComponent } from './player-search/player-search.component';
     LoginComponent,
     HomeComponent,
     PageNotFoundComponent,
-    PlayerSearchComponent
+    PlayerSearchComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
