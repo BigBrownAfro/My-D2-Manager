@@ -63,16 +63,9 @@ html{
 	font-size: 1rem;
 }
 
-div{
-	width: fit-content;
-	height: fit-content;
-	margin-left: auto;
-	margin-right: auto;
-}
-
 input{
 	box-sizing: border-box;
 	color: rgb(187, 187, 187);
-	border: none;
+    border: 2px solid rgb(48, 48, 48);
 	background-color: rgb(39, 39, 39);
 }

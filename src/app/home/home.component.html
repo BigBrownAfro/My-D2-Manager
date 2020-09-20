@@ -1,28 +1,14 @@
 <app-player-search></app-player-search>
 <div style="margin-top: 4rem;" class="home-container">
-    <div style="font-size: 2rem;">Home</div>
+    <div style="font-size: 2rem; text-align: center;">Home</div>
     
     <div>
         <input [(ngModel)]="platform" type="text" placeholder="platform">
         <input [(ngModel)]="id" type="text" placeholder="id">
-    </div>
-
-    <div>
         <button (click)="getAccountStats()">Get Stats</button>
     </div>
     
     <div>
         <div *ngFor="let stat of accountStats">{{stat}}</div>
     </div>
-
-    <div class="dropdown">
-        <input class="dropbtn" type="text" value="Button.....">
-        <div class="dropdown-content">
-          <div class="dropdown-item">Option 1</div>
-          <div class="dropdown-item">Option 222222222222222222222</div>
-          <div class="dropdown-item">Option 3</div>
-        </div>
-    </div>
-
-    <div>To Be Covored</div>
 </div>

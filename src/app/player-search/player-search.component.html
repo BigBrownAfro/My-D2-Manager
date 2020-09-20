@@ -1,5 +1,4 @@
 <div class="player-search-container">
-
     <!-- Platform Dropdown Selection -->
     <div class="platform-dropdown-container">
 
@@ -13,10 +12,18 @@
     </div>
 
     <!-- Player Search Bar -->
-    <input class="search-bar" [(ngModel)]="accountSearchName" type="text" placeholder="Username">
+    <input class="search-bar" [(ngModel)]="playerSearchName" type="text" placeholder="Username">
 
     <!-- Search Button -->
     <div class="search-button" (click)="searchForPlayer()">Search</div>
+
+    <!-- Error Notification -->
+    <div class="error-container" *ngIf="errored">
+        <div class="error-icon">&#9640;</div>
+        <div class="error-items">
+            <div class="error-item" *ngFor="let error of errors">{{error}}</div>
+        </div>
+    </div>
 </div>
 
 <div *ngFor="let user of users">{{user}}</div>
